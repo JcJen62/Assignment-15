@@ -1,0 +1,222 @@
+/* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+/*----------- apply a natural box layout model to all elements --------------*/
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+/*----------- BODY --------------*/
+body {
+    font-family: $fontFamily;
+    font-weight: $regularWeight;
+    font-size: 16px;
+    background-color: rgb(253, 250, 245);
+}
+
+
+/*----------- HEADER --------------*/
+header {
+    padding: 1rem $gutter;
+
+    h1 {
+        margin: 0;
+        font-size: 2rem;
+        font-weight: $heavyWeight;
+    }
+
+    h2 {
+        margin: 0;
+        font-size: 1.2rem;
+        font-weight: $regularWeight;
+    }
+
+    img {
+        float: left;
+        padding-right: 1rem;
+    }
+
+    border-bottom: 1px solid $greyColor;
+}
+
+
+
+/*----------- NAVIGATION --------------*/
+nav {
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+
+        li {
+            width: 25%;
+            float: right;
+        }
+    }
+
+    a {
+        display: block;
+        padding: .8rem 0;
+        color: #919191;
+        text-align: center;
+        text-decoration: none;
+    }
+
+    a:hover {
+        background-color: #6e6e6e;
+        color: white;
+    }
+}
+
+
+/*----------- MAIN --------------*/
+#hero {
+    display: block;
+    height: 100%;
+    max-width: 65rem;
+    margin: 0.8rem auto;
+    width: 100%;
+}
+
+.expect {
+    display: flex;
+    padding: 1rem;
+    color: white;
+    background-color: black;
+
+    h2 {
+        color: yellow;
+    }
+
+    max-width: 65rem;
+    margin: auto;
+}
+
+.expectWrapper {
+    background-color: black;
+}
+
+#formula {
+    text-align: right;
+}
+
+main {
+    padding: 1rem;
+    display: block;
+
+    @for $i from 0 through 12 {
+        $w: ($i / 12) * 100%;
+
+        .small-#{$i} {
+            flex-basis: $w;
+        }
+    }
+
+    .column {
+        padding: 0 $gutter;
+    }
+
+    h2,
+    h3 {
+        color: $primaryColor;
+    }
+
+    #moreAbout {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        border-bottom: 1px solid $greyColor;
+        border-top: 1px solid $greyColor;
+        padding-top: 1rem;
+    }
+
+    #blogCard {
+
+        figure {
+            margin: 0;
+        }
+
+        figure img {
+            width: 100%;
+        }
+    }
+
+    .small {
+        grid-area: small;
+        margin-right: 0.5rem;
+    }
+
+    .long {
+        grid-area: long;
+        margin-right: 0.5rem;
+    }
+
+    .tall {
+        grid-area: tall;
+        background-color: white;
+        text-align: center;
+        figure {
+            margin: 0;
+        }
+    }
+
+    #lastSection {
+        padding-top: 1rem;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "small"
+            "long"
+            "tall";
+    }
+
+    #priceBtn {
+        background-color: #0480b1;
+        border-radius: 5px;
+        display: inline-block;
+        cursor: pointer;
+        color: #ffffff;
+        padding: 13px 40px;
+        font-family: Arial;
+        font-size: 20px;
+        border: none;
+        box-shadow: 0px 10px 14px -7px #6e6e6e;
+    }
+
+    #companies {
+        display: grid;
+        img {
+            max-height: 38px;
+            margin: 1rem auto;
+        }
+    }
+}
+
+
+/*----------- FOOTER --------------*/
+footer {
+    background-image: linear-gradient($primaryColor, rgb(48, 48, 75));
+    padding: 1rem $gutter;
+    display: flex;
+    color: white;
+}
+
+#footer {
+    background-image: linear-gradient($primaryColor, rgb(48, 48, 75));
+}
+
+
+
+/*----- Clearfix: Force an Element not to collapse -----*/
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}

@@ -1,0 +1,43 @@
+/*----------- BODY --------------*/
+
+
+
+/*----------- HEADER --------------*/
+
+
+
+/*----------- NAVIGATION --------------*/
+nav ul {
+    margin-left: 2%;
+}
+
+nav ul li {
+    flex-basis: 100%;
+}
+
+nav ul li a {
+    padding: .5rem 1rem;
+}
+
+nav {
+    height: auto;
+}
+
+a.myjump {
+    display: none;
+}
+
+
+/*----------- MAIN --------------*/
+main {
+    @for $i from 0 through 12 {
+        $w: ($i / 12) * 100%;
+
+        .medium-#{$i} {
+            flex-basis: $w;
+        }
+    }
+}
+
+
+/*----------- FOOTER --------------*/

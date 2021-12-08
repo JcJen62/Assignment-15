@@ -1,0 +1,71 @@
+header,
+nav,
+main,
+footer {
+        max-width: 1200px;
+        margin: auto;
+}
+
+
+/*----------- BODY --------------*/
+
+
+
+/*----------- HEADER --------------*/
+
+
+
+/*----------- NAVIGATION --------------*/
+nav ul {
+        padding-left: $gutter;
+}
+
+nav li {
+        width: auto;
+}
+
+nav a {
+        padding: .5rem 1rem;
+}
+
+nav ul li {
+        width: auto;
+}
+
+nav ul li a {
+        padding: .5rem 1rem;
+}
+
+/*----------- MAIN --------------*/
+main {
+        @for $i from 0 through 12 {
+                $w: ($i / 12) * 100%;
+
+                .large-#{$i} {
+                        flex-basis: $w;
+                }
+        }
+
+        .small {
+                grid-area: small;
+                display: flex;
+        }
+
+        #lastSection {
+                display: grid;
+                grid-template-columns: auto 300px;
+                grid-template-rows: auto;
+                grid-template-areas:
+                        "small tall"
+                        "long tall";
+        }
+
+        #companies{
+                display: flex;
+                justify-content: space-evenly;
+                margin: 1rem 0;
+            }
+}
+
+
+/*----------- FOOTER --------------*/
